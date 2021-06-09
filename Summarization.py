@@ -43,14 +43,15 @@ class Summarization:
         summary = nlargest(select_length, sentence_scores, key=sentence_scores.get)
         final_summary = [word.text for word in summary]
         summary = ' '.join(final_summary)
-        # print(summary)
-        with open('test.txt', 'a+', encoding='utf-8') as file:
-            file.writelines(["%s\n", summary])
+        print(summary)
+        # with open('test.txt', 'a+', encoding='utf-8') as file:
+        #     file.writelines(["%s\n", summary])
+        return summary
 
     def summerize(self, string):
         self.tokenization(string)
         self.frequency()
-        self.result()
+        return self.result()
 
 
 

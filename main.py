@@ -3,12 +3,19 @@ import NewsScrapping
 from Database import Database
 
 a = NewsScrapping.News()
-    b = Summarization()
+b = Summarization()
 mongo = Database()
 
 
-list = a.theQuint()
-# # list['paper'] = 'theWire'
+
+
+list = a.timesOfIndia()
+# list['paper'] = 'theWire'
 # mongo.insert(list)
-# for i in list:
-#     b.summerize(i)
+j =0
+newList = []
+for i in list['data']:
+    newList.append(b.summerize(i))
+
+list['data'] = newList
+mongo.insert(list)

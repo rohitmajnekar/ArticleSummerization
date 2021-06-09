@@ -7,7 +7,7 @@ class Database:
             "mongodb+srv://rohit:rohit123@cluster0.gjvme.mongodb.net/Dataset?retryWrites=true&w=majority")
 
         self._db = self._client['Dataset']
-        self._collection = self._db['data']
+        self._collection = self._db['news']
 
     def insert(self, data):
         res = self._collection.insert_one(data)

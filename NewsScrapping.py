@@ -115,7 +115,7 @@ class News:
         titles = []
         while(n<10):
             for i in soup.find_all('a', class_='_3aBL6'):
-                print(i.get('href')+'#read-more')
+                # print(i.get('href')+'#read-more')
 
                 new_soup = self.getNewsSoup(i.get('href')+'#read-more')
                 link.append(i.get('href')+'#read-more')
